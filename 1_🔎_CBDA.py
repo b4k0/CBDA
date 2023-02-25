@@ -10,9 +10,7 @@ import time
 
 hide_menu = """
 <style>
-#MainMenu{
-    visibility:hidden;
-}
+
 
 footer{
     visibility:hidden;
@@ -29,14 +27,14 @@ st.set_page_config(page_title = "CBDA", page_icon = image)
 
 st.markdown(hide_menu, unsafe_allow_html=True)
 
- 
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.image(image , use_column_width=True, output_format='auto')
 
 
 st.sidebar.markdown("---")
 
 
-st.sidebar.markdown("<br> <br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: center; font-size: 18px; color: #0080FF;'>Ioannis Bakomichalis © 2023</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: center; font-size: 18px; color: #0080FF;'>Ioannis Bakomichalis © 2023</h1>", unsafe_allow_html=True)
 
 
 def clean_text(tweet):
@@ -85,17 +83,22 @@ tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 image = Image.open('logo.png')
 
-    # st.set_page_config(page_title = "CBDA", page_icon = image)
+st.title("Cyber-Bullying Detection🔍")
 
-    # st.image(image , use_column_width=True, output_format='auto')
+input_text = st.text_area("**_Enter the text to analyze_**", key="**_Enter the text to analyze_**")
+col1, col2 = st.columns([1,6])
+with col1:
+    button_predict = st.button('Predict')
+with col2:
 
-st.title("Cyber Bullying Detection ")
-
-input_text = st.text_area("**_Enter the text to analyze_**")
-
+    def clear_text():
+        st.session_state["**_Enter the text to analyze_**"] = ""
 
 
-if st.button('Predict'):
+    button_clear = st.button("Clear", on_click=clear_text)
+    
+
+if button_predict:
     if input_text == "":
      st.snow()
      st.warning("Please provide some text!")
@@ -115,32 +118,45 @@ if st.button('Predict'):
 
         result = model.predict(vector_input)[0]
 
+        # result2 = model.predict_proba(vector_input)[0] 
+        #clf=svm.SVC(probability=True)
+
 
     # 4. display
         st.markdown("---")
         if result == 1 :
             st.subheader("Result")
             st.error(":red[**_Cyberbullying_**]")
+            # st.markdown(result2)
         else:
             st.subheader("Result")
             st.success(":green[**_Not Cyberbullying_**]")
+            # st.markdown(result2)
         st.markdown("---")
         st.subheader("Original Text")
+        expander_original = st.expander("Information", expanded=False)
+        with expander_original:
+            st.info("The text that the user provided!")
         st.text(input_text)
         st.markdown("---")
         st.subheader("Cleaned Text")
+        expander_clean = st.expander("Information", expanded=False)
+        with expander_clean:
+            st.info("From original text has removed punctuation and special characters. Also it has removed hashtags and tags!")
         st.text(cleanText)
         st.markdown("---")
         st.subheader("Transformed Text")
+        expander_transform = st.expander("Information", expanded=False)
+        with expander_transform:
+            st.info("From Cleaned text has removed stopwords. Also, it has be used Stemming!")
         st.text(transformText)
         st.markdown("---")
         st.subheader("Binary Prediction")
+        expander_binary = st.expander("Information", expanded=False)
+        with expander_binary:
+            st.info("Binary Prediction from the Model using Support Vector Machine (SVM) Algorithm!")
         if result == 1:
             st.markdown(":red["+ str(result) +"]")
         else:
             st.markdown(":green["+ str(result) +"]")
         st.markdown("---")
-
-    
-    
-   
