@@ -110,7 +110,7 @@ class_dist = df_cyber["cyberbullying_type"].value_counts()
 # st.markdown("<br> <br> ", unsafe_allow_html=True)
 
 if st.checkbox("Dataset Bar Chart"):   
-    st.bar_chart(class_dist)
+    st.bar_chart(class_dist, width=0, height=0 )
 
 if st.checkbox("Dataset Pie Chart"):   
     fig1, ax1 = plt.subplots()
@@ -123,6 +123,6 @@ if st.checkbox("Dataset Pie Chart"):
     st.pyplot(fig1)
 
 if st.checkbox("Dataset Line Chart"):   
-    st.line_chart(class_dist)
+    st.line_chart(class_dist, width=0, height=0)
 
 st.markdown("---")
