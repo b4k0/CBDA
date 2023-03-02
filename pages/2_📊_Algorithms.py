@@ -43,6 +43,10 @@ st.sidebar.markdown("<br> <br> <br> <br> <br> <br> <br> <br> <h1 style='text-ali
 
 st.title("Algorithms📊")
 
+all_Datasets = ["IEEE", "Cyber Troll","Classified Tweets","Cyberbulling Tweets","IEEE + Cyber Troll","IEEE + Cyber Troll + Classified Tweets + Cyberbulling Tweets"]
+vect_choice = st.selectbox("Choose Dataset", all_Datasets)
+all_Token = ["Tokenizing","Stemming", "Lemmatizing"]
+vect_choice = st.selectbox("Choose Supplemental Data Cleaning", all_Token)
 all_Vectorizers = ["TF-IDF", "Count Vectorizer"]
 vect_choice = st.selectbox("Choose Vectorizer", all_Vectorizers)
 all_ML_models = ["Logistic Regression", "Decision Tree", "Random Forest", "XGBoost", "Naive Bayes", "Support Vector Machine", "Bagging Decision Tree", "Boosting Decision Tree"]
