@@ -96,10 +96,10 @@ with col2:
     def clear_text():
         st.session_state["**_Enter the text to analyze_**"] = ""
 
-
+    # clear button
     button_clear = st.button("Clear", on_click=clear_text)
     
-
+    # predict button animations
 if button_predict:
     if input_text == "":
      st.snow()
