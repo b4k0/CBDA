@@ -1,12 +1,5 @@
 import streamlit as st
 from PIL import Image
-import pickle
-import string
-import re
-from nltk.corpus import stopwords
-import nltk
-from nltk.stem.porter import PorterStemmer 
-import time
 
 hide_menu = """
 <style>
@@ -21,7 +14,6 @@ footer{
 """
 
 showWarningOnDirectExecution = False
-ps = PorterStemmer()
 image = Image.open('logo.png')
 
 
