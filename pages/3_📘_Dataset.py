@@ -3,8 +3,10 @@ from PIL import Image
 import pickle
 import string
 import re
-from nltk.corpus import stopwords
 import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer 
 import time
 import pandas as pd
