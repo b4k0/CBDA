@@ -19,7 +19,6 @@ footer{
 """
 
 showWarningOnDirectExecution = False
-ps = PorterStemmer()
 image = Image.open('logo.png')
 
 
