@@ -1,12 +1,9 @@
 import streamlit as st
 from PIL import Image
-import pickle
-import string
-import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import io
-import seaborn as sns
+
 
 hide_menu = """
 <style>
@@ -35,7 +32,7 @@ st.sidebar.image(image , use_column_width=True, output_format='auto')
 st.sidebar.markdown("---")
 
 
-st.sidebar.markdown("<br> <br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: center; font-size: 18px; color: #0080FF;'>Ioannis Bakomichalis © 2023</h1>", unsafe_allow_html=True)
+st.sidebar.markdown(" <br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: center; font-size: 18px; color: #0080FF;'>Ioannis Bakomichalis © 2023</h1>", unsafe_allow_html=True)
 
 
 df_cyber = pd.read_csv("./Dataset/cyberbullying.csv")
@@ -119,7 +116,3 @@ if st.checkbox("Dataset Pie Chart"):
 
     st.pyplot(fig1)
 
-if st.checkbox("Dataset Line Chart"):   
-    st.line_chart(class_dist, width=0, height=0)
-
-st.markdown("---")
