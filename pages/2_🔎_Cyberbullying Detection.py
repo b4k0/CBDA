@@ -82,8 +82,8 @@ def transform_text(text):
 
         return " ".join(y)
 
-tfidf = pickle.load(open('vectorizer.pkl','rb'))
-model = pickle.load(open('model.pkl','rb'))
+tfidf = pickle.load(open('TFIDFvectorizer.pkl','rb'))
+model = pickle.load(open('bestmodel.pkl','rb'))
 image = Image.open('logo.png')
 
 st.title("Cyber-Bullying Detection🔍")
@@ -145,19 +145,19 @@ if button_predict:
         st.subheader("Cleaned Text")
         expander_clean = st.expander("Information", expanded=False)
         with expander_clean:
-            st.info("From original text has removed punctuation and special characters. Also it has removed hashtags and tags!")
+            st.info("From original text has removed punctuation and special characters. Also it has removed hashtags, tags and emojis!")
         st.text(cleanText)
         st.markdown("---")
         st.subheader("Transformed Text")
         expander_transform = st.expander("Information", expanded=False)
         with expander_transform:
-            st.info("From Cleaned text has removed stopwords. Also, it has be used Stemming!")
+            st.info("From Cleaned text has removed stopwords and transformed to lowercase. Also, it has be used Stemming!")
         st.text(transformText)
         st.markdown("---")
         st.subheader("Binary Prediction")
         expander_binary = st.expander("Information", expanded=False)
         with expander_binary:
-            st.info("Binary Prediction from the Model using Support Vector Machine (SVM) Algorithm!")
+            st.info("Binary Prediction from the Model using Random Forest (RF) Algorithm!")
         if result == 1:
             st.markdown(":red["+ str(result) +"]")
         else:
