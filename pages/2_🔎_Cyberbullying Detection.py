@@ -157,9 +157,15 @@ if button_predict:
         st.subheader("Binary Prediction")
         expander_binary = st.expander("Information", expanded=False)
         with expander_binary:
-            st.info("Binary Prediction from the Model using Random Forest (RF) Algorithm!")
+            st.info("Binary Prediction from the Model!")
         if result == 1:
             st.markdown(":red["+ str(result) +"]")
         else:
             st.markdown(":green["+ str(result) +"]")
+        st.markdown("---")
+        st.subheader("Model Accuracy")
+        expander_accuracy = st.expander("Information", expanded=False)
+        with expander_accuracy:
+            st.info("Model Accuracy using Random Forest (RF) Classifier!")
+        st.warning("Accuracy:  **_91.70 %_**")
         st.markdown("---")
