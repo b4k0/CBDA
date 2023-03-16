@@ -26,7 +26,7 @@ ps = PorterStemmer()
 image = Image.open('logo.png')
 
 
-st.set_page_config(page_title = "CBDA", page_icon = image)
+st.set_page_config(page_title = "Cyberbullying Detection", page_icon = image)
 
 st.markdown(hide_menu, unsafe_allow_html=True)
 
