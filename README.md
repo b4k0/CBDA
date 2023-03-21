@@ -4,8 +4,8 @@
 _**Cyber Bullying Detection Application (CBDA)**_ is a  **Machine Learning Web application** for **cyberbullying detection**.
 
 
+![Image](https://user-images.githubusercontent.com/51766689/226756775-745d6676-1e8e-471b-ab2c-15eb7f99c37c.png)
 
-  <img src="https://user-images.githubusercontent.com/51766689/226750690-a0e10b80-12cb-4020-8e54-a72d7dd604b0.png" title="CBDA" alt="CBDA" width="500" height="400" class="center"/>
 
 ###
 
