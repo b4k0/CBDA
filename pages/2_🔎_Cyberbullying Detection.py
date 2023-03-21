@@ -82,8 +82,8 @@ def transform_text(text):
 
         return " ".join(y)
 
-tfidf = pickle.load(open('TFIDFvectorizer.pkl','rb'))
-model = pickle.load(open('bestmodel.pkl','rb'))
+tfidf = pickle.load(open('pickle/TFIDFvectorizer.pkl','rb'))
+model = pickle.load(open('pickle/bestmodel.pkl','rb'))
 
 st.title("Cyber-Bullying Detection🔍")
 st.markdown("---")
