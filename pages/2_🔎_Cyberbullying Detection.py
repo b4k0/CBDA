@@ -23,7 +23,7 @@ footer{
 
 showWarningOnDirectExecution = False
 ps = PorterStemmer()
-image = Image.open('logo.png')
+image = Image.open('icons/logo.png')
 
 
 st.set_page_config(page_title = "Cyberbullying Detection", page_icon = image)
@@ -84,9 +84,10 @@ def transform_text(text):
 
 tfidf = pickle.load(open('TFIDFvectorizer.pkl','rb'))
 model = pickle.load(open('bestmodel.pkl','rb'))
-image = Image.open('logo.png')
 
 st.title("Cyber-Bullying Detection🔍")
+st.markdown("---")
+st.markdown("<br>", unsafe_allow_html=True)
 
 input_text = st.text_area("**_Enter the text to analyze_**", key="**_Enter the text to analyze_**")
 col1, col2 = st.columns([1,6])
@@ -99,7 +100,8 @@ with col2:
 
     # clear button
     button_clear = st.button("Clear", on_click=clear_text)
-    
+
+
     # predict button animations
 if button_predict:
     if input_text == "":
@@ -145,7 +147,7 @@ if button_predict:
         st.subheader("Cleaned Text")
         expander_clean = st.expander("Information", expanded=False)
         with expander_clean:
-            st.info("From original text has removed punctuation and special characters. Also it has removed hashtags, tags and emojis!")
+            st.info("From original text has removed punctuation and special characters. Also it has removed hashtags, tags and emoji's!")
         st.text(cleanText)
         st.markdown("---")
         st.subheader("Transformed Text")

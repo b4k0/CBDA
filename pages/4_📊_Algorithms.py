@@ -16,7 +16,7 @@ footer{
 """
 
 showWarningOnDirectExecution = False
-image = Image.open('logo.png')
+image = Image.open('icons/logo.png')
 
 
 st.set_page_config(page_title = "Algorithms", page_icon = image)
@@ -36,22 +36,18 @@ st.sidebar.markdown(" <br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: 
 
 
 st.title("Algorithms📊")
+st.markdown("---")
+st.markdown("<br>", unsafe_allow_html=True)
 
 all_Datasets = ["Select a Dataset","Cyber Bullying Types Dataset", "Cyber Troll Dataset","Classified Tweets Dataset","Cyberbulling Classification Dataset","Cyber Bullying Types Dataset + Cyber Troll Dataset","Cyber Bullying Types Dataset + Cyber Troll Dataset + Classified Tweets Dataset + Cyberbulling Classification Dataset"]
-data_choice = st.selectbox("Choose Dataset", all_Datasets)
-# all_Token = ["Tokenizing","Stemming", "Lemmatizing"]
-# token_choice = st.selectbox("Choose Supplemental Data Cleaning", all_Token)
+data_choice = st.selectbox("Dataset", all_Datasets)
 all_Vectorizers = ["Select a Vectorizer", "TF-IDF", "CountVectorizer"]
-vect_choice = st.selectbox("Choose Vectorizer", all_Vectorizers)
+vect_choice = st.selectbox("Vectorizer", all_Vectorizers)
 all_ML_models = ["Select a Machine Learning Algorithm", "Logistic Regression", "Decision Tree", "Random Forest", "XGBoost", "Naive Bayes", "Support Vector Machine", "Bagging Decision Tree", "Boosting Decision Tree"]
-model_choice = st.selectbox("Choose Machine Learning Algorithm", all_ML_models)
+model_choice = st.selectbox("Machine Learning Algorithm", all_ML_models)
+st.markdown("<br>", unsafe_allow_html=True)
+st.markdown("---")
 
-# if data_choice == "Select a Dataset":
-#     st.warning(":white[You should select a **_Dataset_**]")
-# elif vect_choice == "Select a Vectorizer":
-#     st.warning(":white[You should select a **_Vectorizer_**]")
-# elif model_choice == "Select a Machine Learning Algorithm":
-#     st.warning(":white[You should select a **_Machine Learning Algorithm_**]")
 if data_choice == "Select a Dataset" and vect_choice != "Select a Vectorizer" and model_choice != "Select a Machine Learning Algorithm":
     st.warning(":white[You should select **_Dataset_**]")
 elif data_choice != "Select a Dataset" and vect_choice == "Select a Vectorizer" and model_choice != "Select a Machine Learning Algorithm":

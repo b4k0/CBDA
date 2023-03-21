@@ -18,7 +18,7 @@ footer{
 """
 
 showWarningOnDirectExecution = False
-image = Image.open('logo.png')
+image = Image.open('icons/logo.png')
 
 
 st.set_page_config(page_title = "Datasets", page_icon = image)
@@ -37,8 +37,10 @@ st.sidebar.markdown(" <br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: 
 
 st.title("Datasets📘")
 st.markdown("---")
+st.markdown("<br>", unsafe_allow_html=True)
 all_Datasets = ["Select a Dataset","Cyber Bullying Types Dataset", "Cyber Troll Dataset","Classified Tweets Dataset","Cyberbulling Classification Dataset","Cyber Bullying Types Dataset + Cyber Troll Dataset","Cyber Bullying Types Dataset + Cyber Troll Dataset + Classified Tweets Dataset + Cyberbulling Classification Dataset"]
-data_choice = st.selectbox("Choose Dataset", all_Datasets)
+data_choice = st.selectbox("Dataset", all_Datasets)
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("---")
 if data_choice == "Cyber Bullying Types Dataset":
     df_cyber = pd.read_csv("./Dataset/CyberBullyingTypesDataset.csv")

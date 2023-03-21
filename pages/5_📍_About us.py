@@ -14,7 +14,7 @@ footer{
 """
 
 showWarningOnDirectExecution = False
-image = Image.open('logo.png')
+image = Image.open('icons/logo.png')
 
 
 st.set_page_config(page_title = "About us", page_icon = image)
@@ -34,16 +34,17 @@ st.sidebar.markdown("<br> <br> <br> <br> <br> <br> <br> <h1 style='text-align: c
 
 
 st.title("About us📍")
-st.markdown("<br> <br> ", unsafe_allow_html=True)
+st.markdown("---")
+st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("The project **_CBDA_** developed by Postgraduate student :blue[**_Ioannis Bakomichalis_**] for his MSc Dissertation :blue[**_Cyberbullying Detection through NLP & Machine Learning_**].")
-st.markdown("<br> <br> ", unsafe_allow_html=True)
+st.markdown(" <br> ", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("For any question about the project, please contact <a href=mailto:ioannis.bakomichalis@ssl-unipi.gr>Ioannis Bakomichalis</a> .", unsafe_allow_html=True)
-st.markdown("<br> <br>", unsafe_allow_html=True)
+st.markdown("<br> <br> <br>", unsafe_allow_html=True)
 col1, col2 = st.columns([2,4])
 with col1:
-    image = Image.open('unipiLogo.png')
+    image = Image.open('icons/unipiLogo.png')
     st.image(image, use_column_width=False, output_format='auto')
 with col2:
     st.markdown("<br> ", unsafe_allow_html=True)
