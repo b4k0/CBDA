@@ -88,7 +88,6 @@ model = pickle.load(open('bestmodel.pkl','rb'))
 st.title("Cyber-Bullying Detection🔍")
 st.markdown("---")
 st.markdown("<br>", unsafe_allow_html=True)
-
 input_text = st.text_area("**_Enter the text to analyze_**", key="**_Enter the text to analyze_**")
 col1, col2 = st.columns([1,6])
 with col1:
@@ -101,7 +100,7 @@ with col2:
     # clear button
     button_clear = st.button("Clear", on_click=clear_text)
 
-
+st.markdown("---")
     # predict button animations
 if button_predict:
     if input_text == "":
@@ -128,7 +127,6 @@ if button_predict:
 
 
     # 4. display
-        st.markdown("---")
         if result == 1 :
             st.subheader("Result")
             st.error(":red[**_Cyberbullying_**]")
