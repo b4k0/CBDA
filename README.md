@@ -1,4 +1,4 @@
-# CBDA
+# 💻 CBDA
 <br>
 
 _**Cyber Bullying Detection Application (CBDA)**_ is a  **Machine Learning Web application** for **cyberbullying detection**.
@@ -19,7 +19,7 @@ _**Cyber Bullying Detection Application (CBDA)**_ is a  **Machine Learning Web a
 
 ## 🛠 Technologies & Tools
 <br>
-
+5
 - Python
 - Streamlit
 - Pickle
