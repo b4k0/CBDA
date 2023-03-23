@@ -24,8 +24,8 @@ _**Cyber Bullying Detection Application (CBDA)**_ is a  **Machine Learning Web a
 - Streamlit
 - Pickle
 - NLTK
-- HTML
-- CSS
+- HTML5
+- CSS3
 - GitHub
 - Streamlit Cloud
 
